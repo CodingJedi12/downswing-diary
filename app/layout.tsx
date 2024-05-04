@@ -18,8 +18,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
+        <div className="bg-green-blue h-[90vh] overflow-hidden">
         {children}
-        </body>
+        </div>
+      </body>
     </html>
   );
 }
