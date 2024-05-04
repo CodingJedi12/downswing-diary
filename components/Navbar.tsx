@@ -21,13 +21,13 @@ const Navbar = () => {
             </div>
           <div className='hidden md:block'>
             <div className='ml-4 flex items-center space-x-4'>
-              <a href='/' className='text-white hover:bg-white hover:text-black rounded-lg p-2'>
+              <a href='/' className='text-white hover:bg-white hover:text-black rounded-full p-2'>
                 Home
               </a>
-              <a href='/' className='text-white hover:bg-white hover:text-black rounded-lg p-2'>
+              <a href='/' className='text-white hover:bg-white hover:text-black rounded-full p-2'>
                 Profile
               </a>
-              <a href='/' className='text-white hover:bg-white hover:text-black rounded-lg p-2'>
+              <a href='/' className='text-white hover:bg-white hover:text-black rounded-full p-2'>
                 Sign In
               </a>
             </div>
@@ -73,13 +73,13 @@ const Navbar = () => {
         {isClick && (
           <div className='md:hidden'>
             <div className='px-2 pt-2 pb-3 space-y-1'>
-              <a href='/' className='block text-white hover:bg-white hover:text-black rounded-lg p-2'>
+              <a href='/' className='block text-white hover:bg-white hover:text-black rounded-full p-2'>
                 Home
               </a>
-              <a href='/' className='block text-white hover:bg-white hover:text-black rounded-lg p-2'>
+              <a href='/' className='block text-white hover:bg-white hover:text-black rounded-full p-2'>
                 Profile
               </a>
-              <a href='/' className='block text-white hover:bg-white hover:text-black rounded-lg p-2'>
+              <a href='/' className='block text-white hover:bg-white hover:text-black rounded-full p-2'>
                 Sign In
               </a>
             </div>
