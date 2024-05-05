@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Navbar from "../components/Navbar"
+import Navbar from "./_components/Navbar"
 import Link from "next/link";
-import Button from "@/components/Button";
+import Button from "@/app/_components/Button";
 
 export default function Home() {
   return (
