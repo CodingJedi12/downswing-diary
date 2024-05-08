@@ -1,8 +1,11 @@
 import React from 'react'
 import mockPages from '@/app/_data/mockPages'
-import { mock } from 'node:test'
+import prisma from '@/prisma/prisma';
 
-const Table: React.FC = () =>{
+const Table: React.FC = async () =>{
+  const sessions = await prisma.session.findMany({
+    where: { userId: 1 }
+  })
   return (
     <div className='overflow-auto'>
       <table className="table w-full lg:w-[80%] lg:m-auto text-gray-400 border-separate space-y-6 text-sm">
@@ -13,6 +16,9 @@ const Table: React.FC = () =>{
             </th>
             <th scope="col" className="px-6 py-3 text-left text-sm font-bold uppercase tracking-wider">
               Game Type
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-sm font-bold uppercase tracking-wider">
+              Blinds
             </th>
             <th scope="col" className="px-6 py-3 text-left text-sm font-bold uppercase tracking-wider">
               Buy In
@@ -29,13 +35,16 @@ const Table: React.FC = () =>{
           </tr>
         </thead>
         <tbody>
-        {mockPages.map((session) => (
+        {sessions.map((session) => (
             <tr className='bg-gray-800' key={session.id}>
               <td className='px-6 py-3 text-left text-gray-400 text-sm'>
                 {session.date.toDateString()}
               </td>
               <td className='px-6 py-3 text-left text-gray-400 text-sm'>
                 {session.gameType}
+              </td>
+              <td className='px-6 py-3 text-left text-gray-400 text-sm'>
+                {session.blinds}
               </td>
               <td className='px-6 py-3 text-left text-gray-400 text-sm'>
                 ${session.buyIn.toFixed(2)}
